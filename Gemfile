@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "jquery-rails", "4.3.1"
+gem 'bootstrap-slider-rails'
 
 group :development, :test do
 

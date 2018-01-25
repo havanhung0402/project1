@@ -1,25 +1,35 @@
-<header class="navbar navbar-fixed-top navbar-inverse head">
+
+<div id="top">
   <div class="container">
-    <%= link_to "Toeic", root_path, id: "logo" %>
-    <nav>
+    <div>
+    <%= link_to "Toeic", root_path, id: "logo" %> 
+    </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Login", root_path %></li>
-        <li><%= link_to "About Us", help_path %></li>  
+        <li><%= link_to "Đăng kí", root_path, class: "nav-top" %></li>
+        <li><%= link_to "Đăng nhập", root_path, class: "nav-top" %></li>
+        <li><%= link_to "Về chúng tôi", help_path, class: "nav-top" %></li>  
       </ul>
-    </nav>
   </div>
-</header>
-<div class="center jumbotron">
-  <div class=menu_horizontal>
-      <nav>
-        <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Home", "#{}", id:"item" %><li/>
-        <li><%= link_to "About", "#{}", id:"item" %><li/>
-        <li><%= link_to "Help", "#{}", id:"item" %><li/>
-        </ul>
-      </nav>
-  </div>
+
+<div class="top-menu">
+        <ul class="nav navbar-nav navbar-left" id="nav-item">
+        <li><%= link_to "Trang chủ", "#{}", id:"item" %><li/>
+        <li><%= link_to "Giới thiệu", "#{}", id:"item" %><li/>
+        <li><%= link_to "Các khóa học", "#{}", id:"item" %><li/>
+        <li><%= link_to "Lịch khai giảng", "#{}", id:"item" %><li/>
+        <li><%= link_to "Đội ngũ giảng viên", "#{}", id:"item" %><li/>
+        <li><%= link_to "Video toeic", "#{}", id:"item" %><li/>
+        <li><%= link_to "Liên hệ", "#{}", id:"item" %><li/>
+        </ul> 
+        <div class="search">
+        <%= form_tag("/search", method: "get") do %>
+        <%= text_field_tag(:search) %>
+        <%= submit_tag("Search") %>
+        <% end %> 
+        </div>   
 </div>
+</div>
+
 
 
 
