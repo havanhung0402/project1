@@ -8,6 +8,11 @@
   box-sizing:         border-box;
 }
 
+@keyframes anim {
+  from{ transform:translateY(-300px); opacity: 0}
+  to{ transform:translateY(0px); opacity: 1}
+}
+
 .navbar-inverse {
   background-color: #f7f7f7;
   border-color: #ffffff;
@@ -22,7 +27,7 @@ a#logo {
     font-weight: bold;
     letter-spacing: -1px;
     margin-top: 9px;
-    color: #ea6907;
+    color: #ab1e4a;
     margin-top: 10px;
 }
 
@@ -42,10 +47,10 @@ a#logo {
 }
 
 .nav li a {
-  color: #f79220de  ;
+  color: #ab1e4a;
   font-weight:  bold;
   &:hover{
-    color: #01579B;
+    color: #ef0047d4;
     background: #dcdcdc00
   }
 }
@@ -58,15 +63,14 @@ a#logo {
 
 .top-menu {
   height: 48px;
-  background: #f79220de;
+  background: linear-gradient(-45deg,#ec5252,#6e1a52);
 }
 
 #item{
   color:  white;
   font-weight: bold;
   &:hover{
-    background:#f5f5f500;
-    color: #01579B;
+    color: #b1a9ac;
   }
 }
 
@@ -146,26 +150,35 @@ aside {
 }
 /* forms */
 
-textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+h1{
+  text-align: center;
+  animation: anim 1s forwards;
+}
+.row{
+  text-align: center;
+}
+
+label{
+  float:left;
+  margin-top: 20px;
+}
+
+.btn{
+  background-color: #b3292e;
+  border-radius: 8px;
+  border-width: 0px;
+  height: 48px;
   width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-}
-
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
+  margin-top: 20px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  &:hover{
+  background: #da2c33;
   }
 }
 
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-
+.form{
+  animation: anim 1s forwards;
+  background-color: #06060614;
+  border-radius: 8px;
 }
