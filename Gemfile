@@ -17,6 +17,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "jquery-rails", "4.3.1"
 gem 'bootstrap-slider-rails'
+gem 'kaminari'
+
 
 group :development, :test do
 
