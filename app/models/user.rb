@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
   paginates_per 10
   before_save { self.email = email.downcase }
   validates :name,  presence: true, length: { maximum: 50 }

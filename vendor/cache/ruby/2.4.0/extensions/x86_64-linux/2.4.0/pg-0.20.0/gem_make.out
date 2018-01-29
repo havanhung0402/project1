@@ -1,0 +1,41 @@
+current directory: /home/hoa/vendor/cache/ruby/2.4.0/gems/pg-0.20.0/ext
+/usr/bin/ruby2.4 -r ./siteconf20180130-3876-l8filt.rb extconf.rb --with-pg-config=/usr/local/pgsql-9.4/bin/pg_config
+Using config values from /usr/local/pgsql-9.4/bin/pg_config
+sh: 1: /usr/local/pgsql-9.4/bin/pg_config: not found
+sh: 1: /usr/local/pgsql-9.4/bin/pg_config: not found
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/usr/bin/$(RUBY_BASE_NAME)2.4
+	--with-pg
+	--without-pg
+	--enable-windows-cross
+	--disable-windows-cross
+	--with-pg-config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/hoa/vendor/cache/ruby/2.4.0/extensions/x86_64-linux/2.4.0/pg-0.20.0/mkmf.log
+
+extconf failed, exit code 1

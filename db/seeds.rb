@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.create!(name:  "Hoa",
              email: "hoabuisla123@gmail.com",
              address:"Son la",
@@ -13,3 +14,5 @@ User.create!(name:  "Hoa",
              password:              "daigaoi1",
              password_confirmation: "daigaoi1",
              admin: true)
+users = User.order(:created_at).take(6)
+
