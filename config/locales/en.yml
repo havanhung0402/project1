@@ -30,5 +30,67 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  controllers:
+    please_login: "Please log in!"
+    post_create: "post created!"
+    post_delete: "post deleted!"
+    invalid: "Invalid email/password combination"
+    profile_update: "Profile updated"
+    Profile_delete: "User deleted"
+    signup_sc: "Sign Up Success"
+  models:
+    post:
+      picture_err: "should be less than 5MB"
+  views:
+    static_pages:
+      image_1: "toeic1.jpg"
+      image_2: "toeic2.jpg"
+      image_3: "toeic3.jpg"
+      Previous: "Previous"
+      next: "next"
+    layouts:
+      Toeic: "Toeic"
+      logo: "logo"
+      Signup: "Sign Up"
+      about_us: "About Us"
+      user_t: "Users"
+      post_t: "Posts"
+      account: Account
+      Profile: "Profile"
+      setting: "Settings"
+      logout: "Log out"
+      login: "Log in"
+      root_t: "Trang chủ"
+      introduce: "Giới thiệu"
+      course: "Các khóa học"
+      calendar: "Lịch khai giảng"
+      teacher: "Đội ngũ giảng viên"
+      video_t: "Video toeic"
+      contact: "Liên hệ"
+      search: "Search"
+      application: "application"
+    users:
+      Edit_t: "Edit user"
+      edit_title: "Update your profile"
+      Confirmation: "Confirmation"
+      Save: "Save"
+      all_user_text: "All users"
+      delete: "delete"
+      you_sure: "You sure?"
+      signup_title: "Sign up"
+      create: "Create my account"
+    posts:
+      delete: "delete"
+      you_sure: "You sure?"
+    sessions:
+      login: "Log in"
+      signup_now: "Sign up now!"
+    shared:
+      error: "error"
+      post_t: "Posts"
+      view_profile: "view my profile"
+
+
+
+
 
