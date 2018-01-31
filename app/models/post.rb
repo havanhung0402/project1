@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
   validates :content, presence: true
-  validates :picture_size
+  validate :picture_size
 
   private
 
