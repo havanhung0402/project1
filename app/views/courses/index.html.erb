@@ -1,0 +1,29 @@
+<div>
+	<%= link_to image_tag("banner-1.jpg", alt: "banner", class: "banner") %>
+</div>
+<div style="background: #f1f1f1">
+	<div class="container">
+		<p class="title-text"><%= t "views.courses.title" %></p>
+		<%= will_paginate %>
+			<div class="row">
+				<% @courses.each do |course| %>
+					<div class="col-md-3 col-sm-4 col-xs-12">
+						<div class="product-item">
+							<div class="img-wrapper">
+								<%= link_to image_tag("wrapper-1"), "#", id: "wrapper-1" %>
+								<h3>
+									<%= link_to course.title, "#", class: "title-course"%>
+								</h3>
+								<p class="text-sm short-text content-course">
+									<span><%= course.content %></span>		
+								</p>
+								<%= link_to t("views.courses.btn_show_course"), "#", class: "btn-left" %>
+								<%= link_to t("views.courses.btn_register_course"), "#", class: "btn-right" %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		<%= will_paginate %>
+	</div>
+</div>

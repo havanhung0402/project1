@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
-
+ before_action :find_by, only: [:show, :update,:destroy]
  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
  before_action :correct_user, only: [:edit, :update]
  before_action :admin_user, only: :destroy
 
   def show
-    @user = User.find params[:id]
-    @posts = @user.posts.paginate page: params[:page]
+    if @user.present?
+      @posts = @user.posts.paginate page: params[:page]
+    else
+      redirect_to root_url
+    end
   end
 
   def index
@@ -18,7 +21,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find params[:id]
     if @user.update_attributes user_params
       flash[:success] = t "controllers.profile_update"
       redirect_to @user
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = t "controllers.Profile_delete"
     redirect_to users_url
   end
@@ -59,11 +61,18 @@ class UsersController < ApplicationController
     end
 
     def correct_user
-      @user = User.find params[:id]
+      @user = User.find_by id: params[:id]
       redirect_to root_url unless current_user? @user
     end
 
     def admin_user
       redirect_to root_url unless current_user.admin?
+    end
+
+    def find_by
+      @user = User.find_by id: params[:id]
+      if !@user.present?
+      redirect_to root_url
+      end
     end
 end
