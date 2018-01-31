@@ -1,0 +1,6 @@
+user_name_max_length: 50
+email_max_length: 255
+address_max_length: 100
+password_min_length: 6
+title_course_max_length: 100
+course_per_page: 12

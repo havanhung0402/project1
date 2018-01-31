@@ -81,7 +81,11 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    config (1.4.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.1.1)
     crass (1.0.3)
+    deep_merge (1.1.1)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.0)
@@ -404,6 +408,7 @@ DEPENDENCIES
   carrierwave (= 1.2.2)
   ckeditor
   coffee-rails (~> 4.2)
+  config
   faker (= 1.7.3)
   fog (= 1.42)
   jbuilder (~> 2.5)
