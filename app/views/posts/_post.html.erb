@@ -7,7 +7,7 @@
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user.admin? && current_user?(post.user)   %>
       <%=link_to t("views.posts.delete"), post, method: :delete,
-                                       data: { confirm: t("views.posts.you_sure") } %>
+        data: { confirm: t("views.posts.you_sure") } %>
     <% end %>
   </span>
 </li>

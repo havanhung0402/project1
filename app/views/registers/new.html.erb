@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-push-2">
+      <h3 class="register"> <%= t("views.register.panel") %></h3>
+      <div class="form-register">
+      	<%= form_for(@register, url: register_create_path) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+      		<%= f.text_field :name, placeholder: "Full name", class: "form-control" %>
+      		<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+      		<%= f.text_field :birthday, placeholder: "Birthday", class: "form-control" %>
+      		<%= f.text_field :phone, placeholder: "Phone", class: "form-control" %>
+          <%= f.select :course_id, options_from_collection_for_select(@course, :id, :title ) %>
+      		<%= f.submit t("views.register.panel"), class: "btn btn-primary" %>
+      	<% end %>
+      </div>
+    </div>
+  </div>
+</div>

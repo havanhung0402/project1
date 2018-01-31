@@ -251,3 +251,30 @@ img{
 a.btn-right {
   float: right;
 }
+
+/* form-register-course*/
+
+.form-register {
+  background-color: #06060614;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 20px 20px;
+}
+
+.register {
+  margin-bottom: 0px;
+  background: linear-gradient(-45deg, #ec5252, #6e1a52);
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+select#register_course_id {
+  width: 100%;
+  height: 30px;
+}
