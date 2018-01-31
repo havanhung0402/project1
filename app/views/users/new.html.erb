@@ -10,25 +10,24 @@
       <%= f.text_field :name ,class: "form-control" %>
 
       <%= f.label :email, id: "form-lbl" %>
-      <%= f.email_field :email,class: "form-control"  %>
+      <%= f.email_field :email,class: "form-control" %>
 
       <%= f.label :address, id: "form-lbl" %>
-      <%= f.text_field :address, class: "form-control"   %>
+      <%= f.text_field :address, class: "form-control" %>
 
       <%= f.label :birthday, id: "form-lbl" %>
       <%=  f.date_field :birthday,class: "form-control" %>
 
       <%= f.label :phone, id: "form-lbl" %>
-      <%= f.text_field :phone, class: "form-control"   %>
+      <%= f.text_field :phone, class: "form-control" %>
 
       <%= f.label :password, id: "form-lbl" %>
-      <%= f.password_field :password,class: "form-control"  %>
+      <%= f.password_field :password,class: "form-control" %>
 
       <%= f.label :password_confirmation, t("views.users.Confirmation") %>
-      <%= f.password_field :password_confirmation,class: "form-control"  %>
+      <%= f.password_field :password_confirmation,class: "form-control" %>
 
       <%= f.submit t("views.users.create"), class: "btn btn-primary" %>
-
     <% end %>
   </div>
   </div>

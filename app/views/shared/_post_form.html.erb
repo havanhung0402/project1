@@ -4,10 +4,9 @@
   <%= f.text_area :title%>
   <%= f.cktext_area :content%>
 
-
   <%= f.submit t("views.shared.post_t"), class: "btn btn-primary" %>
-   <span class="picture">
-    <%= f.file_field :picture %>
-  </span>
-<% end %>
+    <span class="picture">
+    	<%= f.file_field :picture %>
+  	</span>
+  <% end %>
 </div>

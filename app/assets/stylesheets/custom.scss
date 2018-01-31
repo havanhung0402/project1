@@ -1,6 +1,5 @@
-
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -36,7 +35,7 @@ a#logo {
     padding-left: 80px;
 }
 
-.nav-top{
+.nav-top {
   font-size: 10px;
   border-radius: 0px 0px 7px 7px;
   border-color: white;
@@ -66,7 +65,7 @@ a#logo {
   background: linear-gradient(-45deg,#ec5252,#6e1a52);
 }
 
-#item{
+#item {
   color:  white;
   font-weight: bold;
   &:hover{
@@ -74,16 +73,16 @@ a#logo {
   }
 }
 
-.menu_vertical a{
+.menu_vertical a {
   color: black;
 }
 
-.menu_vertical .nav{
+.menu_vertical .nav {
   width: 300px;
   background: #86868617;
 }
 
-.search_form{
+.search_form {
   float:inherit
 }
 
@@ -103,11 +102,11 @@ a#logo {
 
 }
 
-.btn:hover{
+.btn:hover {
     background: #eae7e7e3;
 }
 
-.btn .caret{
+.btn .caret {
   margin-top: 6px;
   float: right;
 }
@@ -153,20 +152,20 @@ aside {
 }
 /* forms */
 
-h1{
+h1 {
   text-align: center;
   animation: anim 1s forwards;
 }
-.row{
+.row {
   text-align: center;
 }
 
-label{
+label {
   float:left;
   margin-top: 20px;
 }
 
-.btn{
+.btn {
   background-color: #b3292e;
   border-radius: 8px;
   border-width: 0px;
@@ -180,7 +179,7 @@ label{
   }
 }
 
-.form{
+.form {
   animation: anim 1s forwards;
   background-color: #06060614;
   border-radius: 8px;
@@ -200,7 +199,7 @@ label{
 
 
 /* post */
-.field{
+.field {
   margin-left:200px;
   heght:100px;
   width: 870px;
@@ -208,8 +207,8 @@ label{
   width: 870px;
 }
 }
-.pro{
-  h1{
+.pro {
+  h1 {
     text-align: -webkit-auto;
     display: grid;
   }
