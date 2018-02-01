@@ -3,6 +3,10 @@ class PostsController < ApplicationController
   before_action :correct_user, only: :destroy
   before_action :admin_user, only: [:create, :destroy]
 
+  def show
+    @posts = Post.find_by id: params[:id]
+  end
+
   def create
     @post = current_user.posts.build post_params
     if @post.save
@@ -32,6 +36,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.find_by id: params[:id]
       redirect_to root_url if @post.nil?
     end
+
     def admin_user
       redirect_to root_url unless current_user.admin?
     end

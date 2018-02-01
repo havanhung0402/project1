@@ -85,6 +85,10 @@ en:
     sessions:
       login: "Log in"
       signup_now: "Sign up now!"
+    courses:
+      title: "Khóa học tiếng anh"
+      btn_show_course: "Xem chi tiết"
+      btn_register_course: "Đăng kí học"
     shared:
       error: "error"
       post_t: "Posts"
