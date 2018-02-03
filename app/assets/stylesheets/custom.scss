@@ -12,6 +12,8 @@
   to{ transform:translateY(0px); opacity: 1}
 }
 
+/* home page */
+
 .navbar-inverse {
   background-color: #f7f7f7;
   border-color: #ffffff;
@@ -84,6 +86,29 @@ a#logo {
 
 .search_form {
   float:inherit
+}
+
+.header-post {
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+a.more-left {
+  float: left;
+  color: white;
+  font-size: 14px;
+}
+
+a.more-right {
+  float: right;
+  color: white;
+  font-size: 14px;
+}
+
+.image-sm {
+  min-width: 184px;
+  height: 190px;
 }
 
 /* slider */
@@ -169,8 +194,6 @@ label {
   background-color: #b3292e;
   border-radius: 8px;
   border-width: 0px;
-  height: 48px;
-  width: 100%;
   margin-top: 20px;
   font-size: 18px;
   margin-bottom: 30px;
@@ -250,4 +273,12 @@ img{
 
 a.btn-right {
   float: right;
+}
+
+.hidden-text-long {
+  overflow: hidden;
+  display: block;
+  line-height: 16px;
+  max-height: 50px;
+  text-align: left;
 }

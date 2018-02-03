@@ -23,34 +23,38 @@
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only"><%= t "views.static_pages.next" %></span>
     </a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <p class="header-post">Post</p>
+    </div>
+    <div class="col-md-6">
+      <% @posts[0,1].each do |post| %>
+        <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail" %>
+        <h4 style="text-transform: uppercase;"><%= link_to post.title, post_path(post) %></h4>
+        <span class="hidden-text-long"><%= post.content %></span>
+        <p><%= link_to "Xem them", "#", class: "more-left btn" %></p>
+      <% end %>
+    </div>
+    <% @posts[1, @posts.count-1].each do |post| %>
+      <div class="col-md-6">
+        <div>
+          <div class="media-left media-middle image-sm">
+            <%= link_to image_tag(post.picture), post_path(post) %>
+          </div>
+          <div class="media-body">
+            <h4 style="text-transform: uppercase";><%= link_to post.title, post_path(post) %></h4>
+            <span class="hidden-text-long"><%= post.content %></span>
+            <p><%= link_to "Xem them", "#", class: "more-left btn" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-12">
+        <p><%= link_to "Xem them", "#", class: "more-right btn" %></p>
+      </div>
+    </div>
   </div>
 </div>
-<p style="text-align: center" >Recent posts</p>
-<% @posts.each do |post| %>
-<section class="col-md-3 ">
-  <div class="auto-container">
-     <div class="row clearfix">
-
-       <div >
-         <article class="inner-box">
-           <figure class="image">
-             <a><%=link_to image_tag(post.picture),  post_path(post) %></a>
-             <div class="overlay">
-             <span class="left-curve"></span>
-           </figure>
-           <div class="content">
-             <h3><%= truncate post.title, length: 20 %></h3>
-             <div class="text">
-               <p>
-
-               <p>
-             </div>
-             <div class="read-more normal-btn theme-btn"><%=link_to "Xem Chi tiet", post_path(post) %></div>
-           </div>
-         </article>
-       </div>
-
-     </div>
-  </div>
-</section>
-<% end %>
