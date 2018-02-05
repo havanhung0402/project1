@@ -12,6 +12,11 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @posts = Post.find_by id: params[:id]
+  end
+  
   def new
      @post = current_user.posts.build if logged_in?
   end

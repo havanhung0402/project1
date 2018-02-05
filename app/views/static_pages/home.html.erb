@@ -25,3 +25,39 @@
     </a>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"> 
+      <p class="header-post">Post</p>
+    </div>
+    <div class="col-md-6">
+      <% @posts[0,1].each do |post| %>
+        <div class="fix-image">
+        <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail" %>
+        </div>
+        <h4 style="text-transform: uppercase;"><%= link_to post.title, post_path(post) %></h4>
+        <span class="hidden-text-long"><%= raw post.content %></span>
+        <p><%= link_to "Xem them", post_path(post), class: "more-left btn" %></p>
+      <% end %>
+    </div>
+    <% @posts[1, @posts.count-1].take(3).each do |post| %>
+      <div class="col-md-6">
+        <div> 
+          <div class="media-left media-middle image-sm">
+            <%= link_to image_tag(post.picture), post_path(post) %>
+          </div>
+          <div class="media-body">
+            <h4 style="text-transform: uppercase";><%= link_to post.title, post_path(post) %></h4>
+            <span class="hidden-text-long"><%= raw post.content %></span>
+            <p><%= link_to "Xem them", post_path(post), class: "more-left btn" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-md-12">
+        <p><%= link_to "Xem them", "#", class: "more-right btn" %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
 	
   def index
-		@courses = Course.order(created_at: :desc).paginate page: params[:page],
+	@courses = Course.order(created_at: :desc).paginate page: params[:page],
 			per_page: Settings.course_per_page
+  end
+
+  def show
+  	@course = Course.find_by id: params[:id]
   end
 end

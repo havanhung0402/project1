@@ -86,6 +86,41 @@ a#logo {
   float:inherit
 }
 
+.header-post {
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  background: linear-gradient(-45deg, #ec5252, #6e1a52);
+  color: white;
+  width: 200px;
+}
+
+a.more-left {
+  float: left;
+  color: white;
+  font-size: 14px;
+  margin-left: 50px;
+}
+
+a.more-right {
+  float: right;
+  color: white;
+  font-size: 14px;
+}
+
+.image-sm {
+  min-width: 184px;
+  height: 190px;
+}
+
+.fix-image img {
+  width: 450px;
+  height: 320px;
+}
+
 /* slider */
 
 .item{
@@ -152,7 +187,7 @@ aside {
 }
 /* forms */
 
-h1 {
+h1.anim {
   text-align: center;
   animation: anim 1s forwards;
 }
@@ -170,7 +205,6 @@ label {
   border-radius: 8px;
   border-width: 0px;
   height: 48px;
-  width: 100%;
   margin-top: 20px;
   font-size: 18px;
   margin-bottom: 30px;
@@ -250,4 +284,13 @@ img{
 
 a.btn-right {
   float: right;
+}
+
+.hidden-text-long {
+  overflow: hidden;
+  display: block;
+  margin-left: 50px;
+  line-height: 16px;
+  max-height: 50px;
+  text-align: left;
 }
