@@ -33,7 +33,7 @@
       <% @posts[0,1].each do |post| %>
         <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail" %>
         <h4 style="text-transform: uppercase;"><%= link_to post.title, post_path(post) %></h4>
-        <span class="hidden-text-long"><%= post.content %></span>
+        <span class="hidden-text-long"><%= raw post.content %></span>
         <p><%= link_to "Xem them", "#", class: "more-left btn" %></p>
       <% end %>
     </div>
@@ -45,7 +45,7 @@
           </div>
           <div class="media-body">
             <h4 style="text-transform: uppercase";><%= link_to post.title, post_path(post) %></h4>
-            <span class="hidden-text-long"><%= post.content %></span>
+            <span class="hidden-text-long"><%= raw post.content %></span>
             <p><%= link_to "Xem them", "#", class: "more-left btn" %></p>
           </div>
         </div>
