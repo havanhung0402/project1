@@ -9,7 +9,7 @@
       <% if logged_in? %>
         <% if current_user.admin? %>
           <li><%= link_to t("views.layouts.user_t"), users_path %></li>
-          <li><%= link_to t("views.layouts.post_t"), tao_path %></li>
+          <li><%= link_to t("views.layouts.post_t"), new_post_path %></li>
         <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -34,7 +34,7 @@
   <ul class="nav navbar-nav navbar-left" id="nav-item">
     <li><%= link_to t("views.layouts.root_t"), root_path, id:"item" %><li/>
     <li><%= link_to t("views.layouts.introduce"), "#{}", id:"item" %><li/>
-    <li><%= link_to t("views.layouts.course"), "#{}", id:"item" %><li/>
+    <li><%= link_to t("views.layouts.course"), courses_path, id:"item" %><li/>
     <li><%= link_to t("views.layouts.calendar"), "#{}", id:"item" %><li/>
     <li><%= link_to t("views.layouts.teacher"), "#{}", id:"item" %><li/>
     <li><%= link_to t("views.layouts.video_t"), "#{}", id:"item" %><li/>

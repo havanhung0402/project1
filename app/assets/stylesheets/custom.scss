@@ -2,9 +2,9 @@
 @import "bootstrap";
 
 @mixin box_sizing {
-  -moz-box-sizing:    border-box;
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 @keyframes anim {
@@ -19,20 +19,20 @@
 }
 
 a#logo {
-    font-size: 2.7em;
-    text-transform: uppercase;
-    margin-right:  10px;
-    float: left;
-    font-weight: bold;
-    letter-spacing: -1px;
-    margin-top: 9px;
-    color: #ab1e4a;
-    margin-top: 10px;
+  font-size: 2.7em;
+  text-transform: uppercase;
+  margin-right:  10px;
+  float: left;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 9px;
+  color: #ab1e4a;
+  margin-top: 10px;
 }
 
 .nav {
-    text-transform: uppercase;
-    padding-left: 80px;
+  text-transform: uppercase;
+  padding-left: 80px;
 }
 
 .nav-top {
@@ -55,9 +55,9 @@ a#logo {
 }
 
 .search {
-    padding-top: 12px;
-    float: right;
-    padding-right: 40px;
+  padding-top: 12px;
+  float: right;
+  padding-right: 40px;
 }
 
 .top-menu {
@@ -97,13 +97,13 @@ a#logo {
 }
 
 .container {
-    width: 1200px;
-    height: 100%;
+  width: 1200px;
+  height: 100%;
 
 }
 
 .btn:hover {
-    background: #eae7e7e3;
+  background: #eae7e7e3;
 }
 
 .btn .caret {
@@ -212,4 +212,42 @@ label {
     text-align: -webkit-auto;
     display: grid;
   }
+}
+
+/* page course*/
+
+p.title-text {
+  font-size: 34px;
+  font-weight: 300;
+  margin: 30px 0 20px;
+}
+
+img{
+  max-width: 100%;
+}
+
+.product-item {
+  margin-top: 20px;
+  position: relative;
+  padding: 15px;
+  background: rgb(255, 255, 255);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.product-item:hover{
+  transform:translateY(-10px)
+}
+
+.short-text {
+  overflow: hidden;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: 90px;
+  min-height: 80px;
+  -webkit-line-clamp: 5;
+}
+
+a.btn-right {
+  float: right;
 }
