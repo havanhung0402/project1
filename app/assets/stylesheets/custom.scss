@@ -18,6 +18,11 @@
   height: 80px;
 }
 
+img {
+  height: 100%;
+  width: 100%;
+}
+
 a#logo {
   font-size: 2.7em;
   text-transform: uppercase;
@@ -90,10 +95,6 @@ a#logo {
 
 .item{
   height:400px;
-  & img{
-  width: 100%;
-  max-height: 100%;
-  }
 }
 
 .container {
@@ -197,6 +198,10 @@ label {
   }
 }
 
+img.gravatar {
+    width: 48px;
+}
+
 
 /* post */
 .field {
@@ -222,10 +227,6 @@ p.title-text {
   margin: 30px 0 20px;
 }
 
-img{
-  max-width: 100%;
-}
-
 .product-item {
   margin-top: 20px;
   position: relative;
@@ -239,6 +240,11 @@ img{
   transform:translateY(-10px)
 }
 
+.title-course {
+  font-size: 18px;
+  min-height: 60px;
+}
+
 .short-text {
   overflow: hidden;
   display: -webkit-box;
@@ -250,6 +256,15 @@ img{
 
 a.btn-right {
   float: right;
+}
+
+.image-wrapper {
+  height: 134px;
+}
+
+select#course_user_id {
+  width: 30%;
+  height: 32px;
 }
 
 /* form-register-course*/

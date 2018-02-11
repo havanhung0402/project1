@@ -9,14 +9,14 @@
         <% @courses.each do |course| %>
           <div class="col-md-3 col-sm-4 col-xs-12">
             <div class="product-item">
-              <div class="img-wrapper">
-                <%= link_to image_tag("wrapper-1"), "#", id: "wrapper-1" %>
-                <h3>
-                  <%= link_to course.title, "#", class: "title-course"%>
-                </h3>
-                <p class="text-sm short-text content-course">
-                  <span><%= course.content %></span>    
-                </p>
+              <div>
+                <div class="image-wrapper">
+                  <%= link_to image_tag(course.image), "#" %>
+                </div>
+                <h3 class="title-course">
+                  <%= link_to course.title, "#" %>
+                </h3>                
+                <span class="short-text"><%= raw course.content %></span>                   
                 <%= link_to t("views.courses.btn_show_course"), "#", class: "btn-left" %>
                 <%= link_to t("views.courses.btn_register_course"), new_register_path, class: "btn-right" %>
               </div>

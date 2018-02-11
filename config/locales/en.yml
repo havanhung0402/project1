@@ -40,6 +40,7 @@ en:
     signup_sc: "Sign Up Success"
     not_found_user: "User not found"
     not_found_post: "Post not found"
+    create_course_sc: "Success create course"
   models:
     post:
       picture_err: "should be less than 5MB"
@@ -71,6 +72,7 @@ en:
       contact: "Liên hệ"
       search: "Search"
       application: "application"
+      new_course: "New course"
     users:
       Edit_t: "Edit user"
       edit_title: "Update your profile"
@@ -91,6 +93,11 @@ en:
       title: "Khóa học tiếng anh"
       btn_show_course: "Xem chi tiết"
       btn_register_course: "Đăng kí học"
+      create_course: "Create course"
+      title_str: "Title"
+      content_str: "Content"
+      image_str: "Image"
+      price_str: "Price"
     register:
       panel: "ĐĂNG KÝ HỌC"
       success_register: "Success register"
