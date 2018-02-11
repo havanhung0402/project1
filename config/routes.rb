@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  get "/courses", to: "courses#index"
   post "register/create", to: "registers#create"
   resources :users
   resources :posts
   resources :registers
+  resources :courses
 end

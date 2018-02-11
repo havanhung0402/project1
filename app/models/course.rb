@@ -6,4 +6,5 @@ class Course < ApplicationRecord
   validates :title, presence: true, length: {maximum: Settings.title_course_max_length}
   validates :price, presence: true
   validates :image, presence: true
+  mount_uploader :image, PictureUploader
 end
