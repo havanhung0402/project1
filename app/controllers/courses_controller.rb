@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
 
-  before_action :admin_user, only: [:new, :create]
-  before_action :get_all_user, only: [:new, :create]
+  before_action :admin_user, only: [:new, :create, :edit]
+  before_action :get_all_user, only: [:new, :create, :edit]
+  before_action :find_course, only: [:update]
 
   def index
     @courses = Course.order(created_at: :desc).paginate page: params[:page],
@@ -26,8 +27,17 @@ class CoursesController < ApplicationController
     end
   end
 
+  def edit
+    @course = Course.find_by id: params[:id]
+  end
+
   def update
-    
+    if @course.update_attributes params_course
+      flash[:success] = t "controllers.course_update"
+      redirect_to courses_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -42,5 +52,9 @@ class CoursesController < ApplicationController
 
     def get_all_user
       @users = User.select :id, :name
+    end
+
+    def find_course
+      @course = Course.find_by id: params[:id]
     end
 end
