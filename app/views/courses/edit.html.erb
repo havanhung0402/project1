@@ -16,7 +16,8 @@
         </div>
         <%= f.select :user_id, options_from_collection_for_select(@users, :id, :name) %>
       </div>    
-      <div class="col-md-12 pull-6"><%= f.submit t("views.courses.update_course"), class: "btn btn-primary" %></div>
+      <div class="col-md-12 pull-6"><%= f.submit t("views.courses.update_course"), class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>
