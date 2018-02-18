@@ -1,0 +1,34 @@
+<h1><%= t("views.questions.list_question") %></h1>
+<p><%= link_to t("views.questions.new_question"), new_question_path %></p>
+<table border="1">
+  <tr>
+    <th><%= t("views.questions.text") %></th>
+    <th><%= t("views.questions.choice") %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<%= paginate @question %>
+<% @question.each do |question| %>
+  <tr>
+    <td><%= question.text %></td>
+    <td>
+      <ul>
+        <% question.choices.each do |choice| %>
+          <li>
+            <%= choice.text %>
+            <% if choice.correct %> (Correct) <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+    <td><%= link_to t("views.questions.show"), question %></td>
+    <td>
+      <%= link_to t("views.questions.edit"), edit_question_path(question) %>
+    </td>
+    <td><%= link_to t("views.users.delete"), question, method: :delete,
+                    data: { confirm: t("views.users.you_sure") } %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @question %>

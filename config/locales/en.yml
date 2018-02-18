@@ -31,6 +31,9 @@
 
 en:
   controllers:
+    question_create: "Question was successfully created."
+    question_update: "Question was successfully updated."
+    question_delete: "Question delted"
     please_login: "Please log in!"
     post_create: "post created!"
     post_delete: "post deleted!"
@@ -44,6 +47,41 @@ en:
     post:
       picture_err: "should be less than 5MB"
   views:
+    questions:
+      list_question: "Listing questions"
+      new_question: "New Question"
+      text: "Text"
+      choice: "Choices"
+      choice1: "choices"
+      show: "Show"
+      edit: "Edit"
+      text_show: "Question:"
+      black: "Black"
+      create: "Create"
+      create1: "create"
+      new_choice: "New Choice"
+      error: "error"
+      save_fail: "prohibited this question from being saved:"
+    quiz:
+      quiz_select: "How many questions do you want in the quiz?"
+      id_quiz: "question"
+      submit_tag: "Start!"
+      index_text: "index"
+      get_text: "get"
+      submit_text: "submit"
+      quiz_text: "quiz"
+      of_text: "of"
+      Start_text: "start"
+      start_quiz_text: "Start Quiz"
+      question_text: "Question"
+      question_text1: "question"
+      answer_text: "answer"
+      submit_continue: "Continue"
+      quiz_results: "quiz results"
+      submit_another_quiz: "Take another quiz"
+      result_check: "You answered correctly"
+      answer_check_true: "Correct!"
+      answer_check_fail: " Incorrect."
     static_pages:
       image_1: "toeic1.jpg"
       image_2: "toeic2.jpg"
