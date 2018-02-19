@@ -5,12 +5,19 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to t("views.layouts.Signup"), signup_path %></li>
-      <li><%= link_to t("views.layouts.about_us"),"#" %></li>
       <% if logged_in? %>
         <% if current_user.admin? %>
-          <li><%= link_to t("views.layouts.user_t"), users_path %></li>
-          <li><%= link_to t("views.layouts.post_t"), new_post_path %></li>
-          <li><%= link_to t("views.layouts.new_course"), new_course_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t "views.layouts.manager" %><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("views.layouts.user_t"), users_path %></li>
+              <li><%= link_to t("views.layouts.post_t"), new_post_path %></li>
+              <li><%= link_to t("views.layouts.course_manager"), managercourses_path %></li>
+              <li><%= link_to t("views.layout.register_manager"), managerregisters_path %></li>
+            </ul>
+          </li>
         <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">

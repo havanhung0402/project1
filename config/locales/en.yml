@@ -42,6 +42,7 @@ en:
     not_found_post: "Post not found"
     create_course_sc: "Success create course"
     course_update: "Course updated"
+    delete_course: "Course deleted"
   models:
     post:
       picture_err: "should be less than 5MB"
@@ -73,6 +74,9 @@ en:
       contact: "Liên hệ"
       search: "Search"
       application: "application"
+      manager: "Manager"
+      course_manger: "Courses manager"
+      register_manager: "Register manager"
     users:
       Edit_t: "Edit user"
       edit_title: "Update your profile"
@@ -95,10 +99,13 @@ en:
       btn_register_course: "Đăng kí học"
       create_course: "Create course"
       update_course: "Update course"
+      id_str: "ID"
+      id_user: "User id"
       title_str: "Title"
       content_str: "Content"
       image_str: "Image"
-      price_str: "Price"
+      price_str: "Price(vnđ)"
+      option_str: "Option"
       update_course: "Update"
       new_course: "New course"
       edit_course: "Edit course"

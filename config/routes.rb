@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   post "register/create", to: "registers#create"
+  get "/managercourses", to: "courses#index_manager"
+  get "/managerregisters", to: "registers#index"
   resources :users
   resources :posts
   resources :registers
