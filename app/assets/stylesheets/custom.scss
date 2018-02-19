@@ -424,3 +424,22 @@ td {
 a.glyphicon {
   line-height: 3;
 }
+
+/* manager_page */
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+td {
+  text-align: center;
+  &.tb-img {
+  height: 80px;
+  max-width: 100px;
+  padding: 0px;
+  }
+}
+
+a.glyphicon {
+  line-height: 3;
+}
