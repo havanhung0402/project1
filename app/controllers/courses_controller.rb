@@ -15,8 +15,8 @@ class CoursesController < ApplicationController
   end
 
   def index_manager
-    @courses = Course.order(created_at: :desc).select(:id, :user_id, :title, :image, :price).paginate page: params[:page],
-      per_page: Settings.course_per_page
+    @courses = Course.order(created_at: :desc).select(:id, :user_id, :title, :image,
+      :price).paginate page: params[:page], per_page: Settings.course_per_page
   end
 
   def show
