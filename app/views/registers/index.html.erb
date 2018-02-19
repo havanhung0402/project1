@@ -1,0 +1,41 @@
+<div class="container">
+  <div>
+    <p class="title-text">All register</p>
+  </div>
+  <div style="margin-bottom: 20px; margin-left: 50px;">
+    <%= link_to "New register", new_register_path, class: "btn btn-primary" %>   
+  </div>
+  <div class="col-md-12">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th><%= t("views.register.id_str") %></th>
+        <th><%= t("views.register.name_str") %></th>
+        <th><%= t("views.register.email_str") %></th>
+        <th><%= t("views.register.birthday_str") %></th>
+        <th><%= t("views.register.phone_str") %></th>
+        <th><%= t("views.register.course_str") %></th>
+        <th><%= t("views.register.option_str") %></th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @registers.each do |register| %>
+      <tr>
+        <td><%= register.id%></td>
+        <td><%= register.name%></td>
+        <td><%= register.email%></td>
+        <td><%= register.birthday %></td>
+        <td><%= register.phone%></td>
+        <td><%= register.title%></td>
+        <td>
+          <%= link_to "", edit_register_path(register), class: "glyphicon glyphicon-edit" %>
+          <br>
+          <%= link_to "", register, method: :delete, data: {confirm: "Do you want delete?"},class: "glyphicon glyphicon-trash" %>  
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+  </div>
+</div>
