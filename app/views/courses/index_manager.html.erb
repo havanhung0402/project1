@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <p class="title-text">All course</p>
+  </div>
+  <div style="margin-bottom: 20px; margin-left: 50px;">
+    <%= link_to "New course", new_course_path, class: "btn btn-primary" %>   
+  </div>
+  <div class="col-md-12">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th><%= t("views.courses.id_str") %></th>
+        <th><%= t("views.courses.id_user") %></th>
+        <th><%= t("views.courses.title_str") %></th>
+        <th><%= t("views.courses.image_str") %></th>
+        <th><%= t("views.courses.price_str") %></th>
+        <th><%= t("views.courses.option_str") %></th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.id%></td>
+        <td><%= course.user_id%></td>
+        <td><%= course.title%></td>
+        <td class="tb-img"><%= image_tag(course.image) %></td>
+        <td><%= course.price%></td>
+        <td>
+          <%= link_to "", edit_course_path(course), class: "glyphicon glyphicon-edit" %>
+          <br>
+          <%= link_to "", course, method: :delete, data: {confirm: "Do you want delete?"},class: "glyphicon glyphicon-trash" %>  
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+  </div>
+</div>
