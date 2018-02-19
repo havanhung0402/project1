@@ -43,6 +43,9 @@ en:
     create_course_sc: "Success create course"
     course_update: "Course updated"
     delete_course: "Course deleted"
+    register_update: "Register updated"
+    success_register: "Success register"
+    delete_register: "Register deleted"
   models:
     post:
       picture_err: "should be less than 5MB"
@@ -111,7 +114,14 @@ en:
       edit_course: "Edit course"
     register:
       panel: "ĐĂNG KÝ HỌC"
-      success_register: "Success register"
+      update: "Update"
+      id_str: "ID"
+      name_str: "Name"
+      email_str: "Email"
+      birthday_str: "Birthday"
+      phone: "Phone"
+      course_str: "Name course"
+      option_str: "Option"
     shared:
       error: "error"
       post_t: "Posts"

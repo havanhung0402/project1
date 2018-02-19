@@ -4,3 +4,5 @@ address_max_length: 100
 password_min_length: 6
 title_course_max_length: 100
 course_per_page: 12
+register_per_page: 12
+register_per_page: 12
