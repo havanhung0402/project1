@@ -202,9 +202,17 @@ aside {
 }
 /* forms */
 
-h1 {
+h1{
+  text-align: center;
+}
+
+h1#anim {
   text-align: center;
   animation: anim 1s forwards;
+}
+
+h1#title{
+  float: left;
 }
 .row {
   text-align: center;
@@ -299,6 +307,47 @@ a.btn-right {
 select#course_user_id {
   width: 30%;
   height: 32px;
+}
+
+.img-course {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.description-str {
+  font-size: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.content-course {
+  margin-bottom: 40px;
+}
+
+a.img-user {
+  width: 72px;
+  height: 72px;
+}
+
+a.btn-show {
+  background: #dce0de;
+  color: #464646;
+  border-width: 1px;
+  border-color: #d2c7c7;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.price {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+  position: fixed;
+  margin-left: 150px;
+}
+
+a.btn-reg {
+  font-size: 20px;
 }
 
 /* form-register-course*/

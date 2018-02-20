@@ -15,7 +15,8 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find_by id: params[:id]
+    @course = Course.joins(:user).select(:id, :image,
+      :title, :content, :price, :name).find_by(id: params[:id])
   end
 
   def new
