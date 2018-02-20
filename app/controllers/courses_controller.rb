@@ -5,8 +5,8 @@ class CoursesController < ApplicationController
   before_action :find_course, only: [:update]
 
   def index
-    @courses = Course.order(created_at: :desc).paginate page: params[:page],
-      per_page: Settings.course_per_page
+    @courses = Course.order(created_at: :desc).select(:id, :title, :image,
+      :content).paginate page: params[:page], per_page: Settings.course_per_page
   end
 
   def index_manager
@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = find_by id: params[:id]
+    @course = Course.find_by id: params[:id]
   end
 
   def new
