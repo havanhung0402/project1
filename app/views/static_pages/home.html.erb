@@ -1,9 +1,9 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-side-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-side-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
   <div class="carousel-inner">
     <div class="item active">
       <%= link_to image_tag(t "views.static_pages.image_1", alt: "Toeic1") %>
@@ -18,10 +18,77 @@
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only"><%= t "views.static_pages.Previous" %></span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only"><%= t "views.static_pages.next" %></span>
-    </a>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only"><%= t "views.static_pages.next" %></span>
+  </a>
+</div>
+<div class="row"><p class="title-text"><%= t "views.courses.title" %></p></div>
+<div style="background: #e6dbdb">
+  <div class="container">
+    <div class="row">
+      <% @courses.each do |course| %>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="product-item">
+            <div>
+              <div class="image-wrapper">
+                <%= link_to image_tag(course.image), course_path(course) %>
+              </div>
+              <h3 class="title-course">
+                <%= link_to course.title, course_path(course) %>
+              </h3>                
+              <span class="short-text"><%= raw course.content %></span>
+              <%= link_to t("views.courses.btn_show_course"), course_path(course), class: "btn-left" %>
+              <%= link_to t("views.courses.btn_register_course"), new_register_path, class: "btn-right" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+      <%= link_to "Xem them", courses_path, class: "btn btn-more"%>
+    </div>
+  </div>
+  <br>
+</div>
+<div style="padding-bottom: 25px">
+  <div class="container">
+    <div class="col-md-12 title-box">
+      <p class="bg-blue">
+        <%= link_to "bài viết chia sẻ", "#", class: "text-white" %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <% @posts.take(1).each do |post| %>
+        
+          <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail image-lg" %>
+        
+        <h4><%= link_to post.title, post_path(post) %></h4>
+        <div class="short-content">
+          <p><%= raw post.content %></p>
+        </div>
+        <%= link_to "Đọc thêm", post_path(post), class: "btn btn-more" %>
+      <% end %>  
+    </div>
+    <div class="col-md-6">
+      <% @posts[1,3].each do |post| %>
+        <div class="media">
+          <div class="media-left">
+            <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail image-sm" %>
+          </div>
+          <div class="media-body">
+            <%= link_to post.title, post_path(post) %>
+            <div class="short-content">
+              <%= raw post.content %>
+            </div>
+            <br>
+            <%= link_to "Xem them", post_path(post) %>
+          </div>
+        </div>
+      <% end %>  
+    </div>
+    <%= link_to "Xem them", posts_path, class: "btn btn-more btn-right"%>
   </div>
 </div>
+<br>
