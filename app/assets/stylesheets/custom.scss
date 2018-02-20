@@ -144,6 +144,32 @@ a.image-sm {
   float: right;
 }
 
+/* Footer */
+
+.footer {
+  background: url(bg.jpg);
+  min-height: 350px;
+  padding: 5em 0 0;
+}
+
+.grid {
+  border-right: 1px solid #fff;
+  height: 260px;
+}
+
+.icon {
+  margin-left: 90px;
+  padding: 10px;
+}
+
+.copyright {
+  height: 52px;
+  background: #333333;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+}
+
 /* slider */
 
 .item{
@@ -277,6 +303,7 @@ p.title-text {
   background: rgb(255, 255, 255);
   transition: all 0.3s ease;
   text-align: left;
+  margin-bottom: 40px;
 }
 
 .product-item:hover{
@@ -346,8 +373,9 @@ a.btn-show {
   margin-left: 150px;
 }
 
-a.btn-reg {
+a.btn-regis {
   font-size: 20px;
+  font-weight: bold
 }
 
 /* form-register-course*/
