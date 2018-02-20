@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="col-md-12">
+		<h1 id="title"><%= @course.title %></h1>
+	</div>
+	<div class="col-md-8">
+		<div class="img-course">
+			<%= image_tag(@course.image) %>
+		</div>
+		<p class="description-str">MÔ TẢ KHÓA HỌC:</p>
+		<div class="content-course">
+			<%= raw @course.content %>
+		</div>
+		<div class="media">
+		<div class="media-left">
+			<%= link_to image_tag("user.jpg"), "#", class: "img-thumbnail img-user" %>
+		</div>
+		<div class="media-body">
+			<%= "Giang vien"%>
+			<br>
+			<%= @course.name %>
+			<br>
+			<%= link_to "Xem ho so", "#", class: "btn btn-show" %>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-4">
+		<div class="row">
+			<div class="price">
+				<p><%= number_with_delimiter(@course.price, precision: 0) %>đ<p/>
+				<%= link_to "ĐĂNG KÍ KHÓA HỌC", new_register_path, class: "btn btn-more btn-reg" %>
+			</div>
+			<br>
+
+		</div>
+	</div>
+</div>
