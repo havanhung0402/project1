@@ -46,6 +46,7 @@ en:
     register_update: "Register updated"
     success_register: "Success register"
     delete_register: "Register deleted"
+    post_update: "Post updated"
   models:
     post:
       picture_err: "should be less than 5MB"
@@ -94,7 +95,14 @@ en:
       delete: "delete"
       you_sure: "You sure?"
       more: "Xem thêm"
+      read_more: "Đọc thêm"
       title: "BÀI VIẾT"
+      id_str: "ID"
+      title_str: "Title"
+      image_str: "Image"
+      name_str: "Lecturers"
+      option_str: "Option"
+      register: "ĐĂNG KÍ HỌC"
     sessions:
       login: "Log in"
       signup_now: "Sign up now!"

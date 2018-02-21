@@ -6,4 +6,7 @@
     <%= @post.updated_at %>
   </div>
   <div><%= raw @post.content %></div>
+  <div class="row" style="margin-bottom: 50px">
+  	<%= link_to t("views.posts.register"), new_register_path, class: "btn btn-more btn-reg" %>
+  </div>
 </div>

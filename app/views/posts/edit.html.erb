@@ -1,0 +1,19 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="micropost_form">
+        <%= form_for(@post) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          <div class="field">
+            <%= f.text_area :title%>
+            <%= f.cktext_area :content%>
+            <%= f.submit t("views.shared.post_t"), class: "btn btn-primary" %>
+            <span class="picture">
+              <%= f.file_field :picture %>
+            </span>
+          </div>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+<% end %>

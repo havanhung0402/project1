@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
 
   before_action :admin_user, only: [:new, :create, :edit, :index_manager, :destroy]
   before_action :get_all_user, only: [:new, :create, :edit]
-  before_action :find_course, only: [:update]
+  before_action :find_course, only: [:update, :edit]
 
   def index
     @courses = Course.order(created_at: :desc).select(:id, :title, :image,
@@ -31,10 +31,6 @@ class CoursesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @course = Course.find_by id: params[:id]
   end
 
   def update

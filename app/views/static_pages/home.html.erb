@@ -68,7 +68,7 @@
         <div class="short-content">
           <p><%= raw post.content %></p>
         </div>
-        <%= link_to "Đọc thêm", post_path(post), class: "btn btn-more" %>
+        <%= link_to t("views.posts.read_more"), post_path(post), class: "btn btn-more" %>
       <% end %>  
     </div>
     <div class="col-md-6">
@@ -83,12 +83,12 @@
               <%= raw post.content %>
             </div>
             <br>
-            <%= link_to "Xem them", post_path(post) %>
+            <%= link_to t("views.posts.read_more"), post_path(post) %>
           </div>
         </div>
       <% end %>  
     </div>
-    <%= link_to "Xem them", posts_path, class: "btn btn-more btn-right"%>
+    <%= link_to t("views.posts.more"), posts_path, class: "btn btn-more btn-right"%>
   </div>
 </div>
 <br>

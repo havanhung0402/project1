@@ -2,12 +2,13 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
   before_action :admin_user, only: [:create, :destroy, :new]
+  before_action :find_post, only: [:update, :edit]
 
   def create
     @post = current_user.posts.build post_params
     if @post.save
       flash[:success] = t "controllers.post_create"
-      redirect_to root_url
+      redirect_to managerposts_path
     else
       render :new
     end
@@ -27,8 +28,22 @@ class PostsController < ApplicationController
       :updated_at).paginate page: params[:page], per_page: Settings.post_per_page
   end
 
+  def index_manager
+    @posts = Post.joins(:user).order(created_at: :desc).select(:id, :title,
+      :picture, :name).paginate page: params[:page], per_page: Settings.post_per_page
+  end
+
   def show
     @post = Post.select(:title, :content, :updated_at).find_by id: params[:id]
+  end
+
+  def update
+    if @post.update_attributes post_params
+      flash[:success] = t "controllers.post_update"
+      redirect_to managerposts_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -40,5 +55,9 @@ class PostsController < ApplicationController
     def correct_user
       @post = current_user.posts.find_by id: params[:id]
       redirect_to root_url if @post.nil?
+    end
+
+    def find_post
+      @post = Post.find_by id: params[:id]
     end
 end

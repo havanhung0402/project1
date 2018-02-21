@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "register/create", to: "registers#create"
   get "/managercourses", to: "courses#index_manager"
   get "/managerregisters", to: "registers#index"
+  get "/managerposts", to: "posts#index_manager"
   resources :users
   resources :posts
   resources :registers
