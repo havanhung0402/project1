@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211161047) do
+ActiveRecord::Schema.define(version: 20180218192145) do
+
+  create_table "choices", force: :cascade do |t|
+    t.string "text"
+    t.integer "question_id"
+    t.boolean "correct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "courses", force: :cascade do |t|
     t.integer "user_id"
@@ -31,6 +39,14 @@ ActiveRecord::Schema.define(version: 20180211161047) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "text"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "registers", force: :cascade do |t|

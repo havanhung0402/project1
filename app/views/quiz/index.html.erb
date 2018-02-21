@@ -1,0 +1,18 @@
+<div class="quiz-form">
+<h1><%= t("views.quiz.start_quiz_text") %></h1>
+<%= form_tag({:controller => t("views.quiz.quiz_text"),
+              :action => t("views.quiz.Start_text")}) do %>
+  <p class="start-quiz" >
+  <%= label_tag(:number ,t("views.quiz.quiz_select") ,
+                :id => t("views.quiz.id_quiz")) %>
+  </p>
+  <h5 class="quiz-center">
+  <%= select_tag(:number, options_for_select((1..10).map {|x| [x, x]}),
+                 :id => "count") %>
+  </h5>
+  <div class="quiz-center">
+   <%= submit_tag t("views.quiz.submit_tag"),
+                  :class => t("views.quiz.submit_text")%>
+  </div>
+<% end %>
+</div>

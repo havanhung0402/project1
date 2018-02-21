@@ -14,4 +14,11 @@ class Post < ApplicationRecord
         errors.add(:picture, t("models.post.picture_err"))
       end
     end
+def self.search(search, title)
+ if search
+   where(['title LIKE ?', "%#{search}%"])
+ else
+  scoped
+ end
+end
 end

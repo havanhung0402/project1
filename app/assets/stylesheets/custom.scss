@@ -420,11 +420,87 @@ td {
   padding: 0px;
   }
 }
-
 a.glyphicon {
   line-height: 3;
 }
 
 .posts {
   padding: 50px;
+}
+
+
+/* quiz */
+.quiz-form {
+  margin-top: 30px;
+  position: relative;
+  background: #ddd;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 30px;
+
+}
+.quiz-center select{
+  padding: 5px;
+  margin-top: -4px;
+  font-size: large;
+  margin-left: 7px
+}
+.start-quiz label{
+  margin-left: 350px;
+  margin-top: 2px;
+}
+.quiz-center input{
+  margin-left: 515px;
+  padding: 8px;
+}
+.question-quiz {
+  margin-left: 30px;
+  font-size: 150%;
+  text-align: -webkit-auto;
+  font-weight: 700;
+}
+.choice{
+  width: 500px;
+  display: inline-block;
+}
+.center {
+  text-align: center;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question-form{
+  width: 0px;
+  margin-left: 30px;
+
+}
+.choice input{
+  display: block;
+  position: absolute;
+  background-color: #eee;
+}
+.feedback {
+  width: 56px;
+  margin : 0px auto;
+  color: red;
+}
+.end-form{
+  width: 244px;
+  margin : 0px auto;
+  color: red;
+}
+/* question */
+.actions {
+  margin-left: 590px;
+}
+.show-question input{
+margin: 10px;
+}
+.show-question {
+width: 1250px;
+margin: 0px auto;
+display: initial;
+}
+.choice-create{
+display: block;
 }

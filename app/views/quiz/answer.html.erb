@@ -1,0 +1,15 @@
+<div class="quiz-form">
+<h1><%= t("views.quiz.question_text")%> <%= @current + 1 %> <%= t("views.quiz.of_text") %> <%= @total %></h1>
+<p class="feedback">
+  <% if @correct %>
+   <%= t("views.quiz.answer_check_true") %>
+  <% else %>
+   <%= t("views.quiz.answer_check_fail") %>
+  <% end %>
+</p>
+<%= form_tag({:controller => t("views.quiz.quiz_text"), :action => "question"}) do %>
+  <div class="center">
+   <%= submit_tag(t("views.quiz.submit_continue"), :class => t("views.quiz.submit_text")) %>
+  </div>
+<% end %>
+</div>

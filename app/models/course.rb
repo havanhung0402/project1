@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-	
+
   belongs_to :user
   has_many :registers
   validates :user_id, presence: true
@@ -8,4 +8,11 @@ class Course < ApplicationRecord
   validates :price, presence: true
   validates :image, presence: true
   mount_uploader :image, PictureUploader
+def self.search(search, title)
+ if search
+   where(['title LIKE ?', "%#{search}%"])
+ else
+  scoped
+ end
+end
 end

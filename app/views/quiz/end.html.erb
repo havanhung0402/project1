@@ -1,0 +1,12 @@
+<div class="quiz-form">
+<h1><%= t("views.quiz.quiz_results") %></h1>
+<div class="end-form">
+<p id="question"><%= t("views.quiz.result_check") %> <%= @correct %> / <%= @total %> questions.</p>
+<%= form_tag({:controller => t("views.quiz.quiz_text"), :action => t("views.quiz.index_text")}, :method => t("views.quiz.get_text")) do %>
+</div>
+
+  <div class="center">
+   <%= submit_tag(t("views.quiz.submit_another_quiz"), :class => t("views.quiz.submit_text")) %>
+  </div>
+<% end %>
+</div>

@@ -16,6 +16,7 @@
               <li><%= link_to t("views.layouts.post_t"), new_post_path %></li>
               <li><%= link_to t("views.layouts.course_manager"), managercourses_path %></li>
               <li><%= link_to t("views.layout.register_manager"), managerregisters_path %></li>
+              <li><%= link_to t("views.quiz.id_quiz"), questions_path %></li>
             </ul>
           </li>
         <% end %>
@@ -43,13 +44,13 @@
     <li><%= link_to t("views.layouts.root_t"), root_path, id:"item" %><li/>
     <li><%= link_to t("views.layouts.introduce"), "#{}", id:"item" %><li/>
     <li><%= link_to t("views.layouts.course"), courses_path, id:"item" %><li/>
-    <li><%= link_to t("views.layouts.calendar"), "#{}", id:"item" %><li/>
+    <li><%= link_to t("views.quiz.id_quiz"), quizt_path, id:"item" %><li/>
     <li><%= link_to t("views.layouts.teacher"), "#{}", id:"item" %><li/>
     <li><%= link_to t("views.layouts.video_t"), "#{}", id:"item" %><li/>
     <li><%= link_to t("views.layouts.contact"), "#{}", id:"item" %><li/>
   </ul>
 <div class="search">
-  <%= form_tag("/search", method: "get") do %>
+  <%= form_tag(indexh_path, method: "get") do %>
     <%= text_field_tag(:search) %>
     <%= submit_tag(t "views.layouts.search", class: "btn-search") %>
   <% end %>
