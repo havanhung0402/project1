@@ -1,0 +1,26 @@
+<div class="container">
+	<h2 id="post-title"><%= t"views.posts.title" %></h2>
+	<div class="col-md-9 posts">
+		<div style="margin-bottom: 50px; margin-top: 50px">
+			<% @posts.each do |post| %>
+	      <div class="media">
+	        <div class="media-left">
+	          <%= link_to image_tag(post.picture), post_path(post), class: "img-thumbnail image-sm" %>
+	        </div>
+	        <div class="media-body">
+	          <%= link_to post.title, post_path(post) %>
+	          <div class="short-content">
+	            <%= raw post.content %>
+	          </div>
+	          <br>
+	          <div class="glyphicon glyphicon-calendar">
+	          <%= post.updated_at %>
+	          </div>
+	          <%= link_to t("views.posts.more"), post_path(post), class: "btn btn-more btn-right" %>
+	        </div>
+	      </div>
+	    <% end %>
+	    <%= will_paginate %>
+    </div>
+	</div>
+</div>

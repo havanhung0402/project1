@@ -22,6 +22,15 @@ class PostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def index
+    @posts = Post.select(:id, :title, :content, :picture,
+      :updated_at).paginate page: params[:page], per_page: Settings.post_per_page
+  end
+
+  def show
+    @post = Post.select(:title, :content, :updated_at).find_by id: params[:id]
+  end
+
   private
 
     def post_params

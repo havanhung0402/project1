@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1 id="title"><%= @post.title %></h1>
+  </div>
+  <div class="glyphicon glyphicon-calendar" style="margin-bottom: 50px">
+    <%= @post.updated_at %>
+  </div>
+  <div><%= raw @post.content %></div>
+</div>
