@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
 
-  before_action :admin_user, only: [:new, :create, :edit, :index_manager, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :index_manager,
+    :destroy]
+  before_action :admin_user, only: [:new, :create, :edit, :index_manager,
+    :destroy]
   before_action :get_all_user, only: [:new, :create, :edit]
   before_action :find_course, only: [:update, :edit]
 

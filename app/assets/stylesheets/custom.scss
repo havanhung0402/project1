@@ -72,6 +72,7 @@ a#logo {
 .top-menu {
   height: 48px;
   background: linear-gradient(-45deg,#ec5252,#6e1a52);
+  padding-left: 120px;
 }
 
 #item {
@@ -150,6 +151,7 @@ a.image-sm {
   background: url(bg.jpg);
   min-height: 350px;
   padding: 5em 0 0;
+  margin-top: 40px;
 }
 
 .grid {
@@ -253,6 +255,7 @@ label {
   animation: anim 1s forwards;
   background-color: #06060614;
   border-radius: 8px;
+  padding-bottom: 20px;
 }
 
 /* Users index */

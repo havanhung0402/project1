@@ -1,4 +1,7 @@
 class RegistersController < ApplicationController
+
+  before_action :logged_in_user, only: [:edit, :index,
+    :destroy]
   before_action :get_all_course, only: [:new, :create, :edit]
   before_action :admin_user, only: [:edit, :update, :destroy]
   before_action :find_register, only: [:update]

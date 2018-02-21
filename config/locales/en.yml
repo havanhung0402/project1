@@ -62,8 +62,8 @@ en:
       logo: "logo"
       Signup: "Sign Up"
       about_us: "About Us"
-      user_t: "Users"
-      post_t: "Posts"
+      user_t: "Users manager"
+      post_t: "Posts manager"
       account: Account
       Profile: "Profile"
       setting: "Settings"
