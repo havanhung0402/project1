@@ -1,0 +1,2 @@
+class RenameUserType < ApplicationRecord
+end

@@ -2,9 +2,9 @@ class CoursesController < ApplicationController
 
   before_action :logged_in_user, only: [:new, :create, :edit, :index_manager,
     :destroy]
-  before_action :admin_user, only: [:new, :create, :edit, :index_manager,
+  before_action :verify_admin!, only: [:new, :create, :edit, :index_manager,
     :destroy]
-  before_action :get_all_user, only: [:new, :create, :edit]
+  before_action :load_users, only: [:new, :create, :edit]
   before_action :find_course, only: [:update, :edit]
 
   def index
@@ -27,8 +27,8 @@ class CoursesController < ApplicationController
   end
 
   def create
-    @course = Course.new params_course
-    if @course.save
+    course = Course.new params_course
+    if course.save
       flash[:success] = t "controllers.create_course_sc"
       redirect_to managercourses_url
     else
@@ -53,15 +53,15 @@ class CoursesController < ApplicationController
 
   private
 
-    def params_course
-      params.require(:course).permit :title, :content, :image, :price, :user_id
-    end
+  def params_course
+    params.require(:course).permit :title, :content, :image, :price, :user_id
+  end
 
-    def get_all_user
-      @users = User.select :id, :name
-    end
+  def load_users
+    @users = User.select :id, :name
+  end
 
-    def find_course
-      @course = Course.find_by id: params[:id]
+  def find_course
+    @course = Course.find_by id: params[:id]
     end
 end

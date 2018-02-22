@@ -1,16 +1,51 @@
-<% provide(:title, t("views.users.all_user_text")) %>
-<h1><%= t "views.users.all_user_text" %></h1>
-<%= paginate @users %>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to t("views.users.delete"), user, method: :delete,
-                                  data: { confirm: t("views.users.you_sure") } %>
-  <% end %>
-    </li>
-  <% end %>
-</ul>
-<%= paginate @users %>
+<div class="container">
+  <div>
+    <p class="title-text">All user</p>
+  </div>
+  <div style="margin-bottom: 20px; margin-left: 50px;">
+    <%= link_to "New user", new_user_path, class: "btn btn-primary" %>   
+  </div>
+  <div class="col-md-12">
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th><%= t("views.users.id_str") %></th>
+        <th><%= t("views.users.name_str") %></th>
+        <th><%= t("views.users.image_str") %></th>
+        <th><%= t("views.users.email_str") %></th>
+        <th><%= t("views.users.address_str") %></th>
+        <th><%= t("views.users.phone_str") %></th>
+        <th><%= t("views.users.type_user_str") %></th>
+        <th><%= t("views.users.option_str") %></th>
+      </tr>
+    </thead>
+    <tbody>
+       <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= user.name%></td>
+        <td class="tb-img">
+          <% if user.img_profile %>
+            <p><%= image_tag(user.img_profile) %></p>
+          <% else %>
+            <div class="img-profile img-thumbnail">
+              <p><%= image_tag("profile.jpeg") %></p>
+            </div>
+          <% end %>
+        </td>
+        <td><%= user.email%></td>
+        <td><%= user.address%></td>
+        <td><%= user.phone%></td>
+        <td><%= user.type_user%></td>
+        <td>
+          <%= link_to "", edit_user_path(user), class: "glyphicon glyphicon-edit" %>
+          <br>
+          <%= link_to "", user, method: :delete, data: {confirm: "Do you want delete?"},class: "glyphicon glyphicon-trash" %>  
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+  </div>
+</div>

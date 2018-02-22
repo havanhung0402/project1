@@ -3,7 +3,7 @@ class RegistersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :index,
     :destroy]
   before_action :get_all_course, only: [:new, :create, :edit]
-  before_action :admin_user, only: [:edit, :update, :destroy]
+  before_action :verify_admin!, only: [:edit, :update, :destroy]
   before_action :find_register, only: [:update]
   def new
     @register = Register.new
@@ -15,7 +15,7 @@ class RegistersController < ApplicationController
       flash[:success] = t "controllers.success_register"
       if logged_in?
         if current_user.admin?
-        redirect_to managerregisters_path
+          redirect_to managerregisters_path
         else 
           redirect_to root_url
         end

@@ -17,7 +17,7 @@
                   <%= link_to course.title, "#" %>
                 </h3>                
                 <span class="short-text"><%= raw course.content %></span>                   
-                <%= link_to t("views.courses.btn_show_course"), "#", class: "btn-left" %>
+                <%= link_to t("views.courses.btn_show_course"), course_path(course), class: "btn-left" %>
                 <%= link_to t("views.courses.btn_register_course"), new_register_path, class: "btn-right" %>
               </div>
             </div>

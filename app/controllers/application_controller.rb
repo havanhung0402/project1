@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def admin_user
+  def verify_admin!
     redirect_to root_url unless current_user.admin?
   end
 end

@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
- before_action :find_user, only: [:show, :update,:destroy]
+ before_action :find_user, only: [:show, :update,:destroy, :edit]
+ before_action :verify_admin!, only: [:destroy, :index, :edit, :update]
  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
  before_action :correct_user, only: [:edit, :update]
- before_action :admin_user, only: :destroy
+ before_action :get_all_type_user, only: [:new, :create]
 
   def show
     if @user.present?
@@ -15,6 +16,10 @@ class UsersController < ApplicationController
 
   def index
      @users = User.page params[:page]
+  end
+
+  def signup
+    @user = User.new
   end
 
   def new
@@ -40,9 +45,22 @@ class UsersController < ApplicationController
    @user = User.new user_params
     if @user.save
       flash[:success] = t "controllers.signup_sc"
-      redirect_to root_url
+      if logged_in? 
+        if current_user.admin?
+          redirect_to users_path
+        else
+          redirect_to root_url
+        end
+      end
     else
-      render :new
+      if logged_in? 
+        if current_user.admin?
+          render :new
+        else
+          render :signup
+        end
+      end
+      
     end
   end
 
@@ -50,7 +68,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit :name,:email,:address,:birthday,:phone, :password,
-                                   :password_confirmation
+        :password_confirmation, :admin
     end
 
      def logged_in_user
@@ -72,5 +90,9 @@ class UsersController < ApplicationController
         flash[:danger] = t "controllers.not_found_user"
         redirect_to root_url
       end
+    end
+
+    def get_all_type_user
+      @type_user = Type.all
     end
 end
