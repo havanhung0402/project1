@@ -1,6 +1,6 @@
 <% provide(:title, t("views.users.signup_title")) %>
 <div class="container" style="margin-bottom: 40px">
-  <h1 id="anim"><%= t "views.users.new"%></h1>
+  <h1 id="anim"><%= t "views.users.signup_title"%></h1>
   <div class="row">
     <div class="col-lg-6 col-md-4 col-md-offset-3 col-sm-2 form">
       <%= form_for @user, url: signup_path do |f| %>
@@ -22,17 +22,11 @@
         <%= f.text_field :phone, class: "form-control" %>
 
         <%= f.label :password, id: "form-lbl" %>
-        <%= f.password_field :password, class: "form-control" %>
+        <%= f.password_field :password,class: "form-control" %>
 
         <%= f.label :password_confirmation, t("views.users.Confirmation") %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <%= f.password_field :password_confirmation,class: "form-control" %>
 
-        <%= f.select :type_id, options_from_collection_for_select(@type_user, :id, :typename) %>
-        <div class="container">
-          <%= f.check_box :admin %>
-          <%= f.label :admin?, id: "form-lbl" %>
-        </div>
-        <br>
         <%= f.submit t("views.users.create"), class: "btn btn-primary" %>
       <% end %>
     </div>

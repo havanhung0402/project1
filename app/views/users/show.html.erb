@@ -1,10 +1,16 @@
 <% provide(:title, @user.name) %>
-<div class="pro">
-<h1><%= gravatar_for @user %></h1>
-<h1><%= @user.name %></h1>
-<h1><%= @user.address %></h1>
-<h1><%= @user.birthday %></h1>
-<h1><%= @user.phone %></h1>
+<div class="row">
+  <% if @user.img_profile %>
+    <p><%= image_tag(@user.img_profile) %></p>
+  <% else %>
+    <div class="img-profile img-thumbnail">
+      <p><%= image_tag("profile.jpeg") %></p>
+    </div>
+  <% end %>
+  <h1><%= @user.name %></h1>
+  <h1><%= @user.address %></h1>
+  <h1><%= @user.birthday %></h1>
+  <h1><%= @user.phone %></h1>
 </div>
 <div class="col-md-8">
   <% if @user.posts.any? %>

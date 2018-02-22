@@ -2,9 +2,22 @@
 <h1><%= t "views.users.edit_title" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-     <%= render "shared/error_messages", object: f.object %>
-
+    <%= form_for @user  do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <% if @user.img_profile %>
+        <p><%= image_tag(@user.img_profile) %></p>
+      <% else %>
+        <div class="khoi">
+          <div class="img-profile img-thumbnail">
+            <p><%= image_tag("profile.jpeg") %></p>
+          </div>
+        <div class="upload">
+          <span class="glyphicon glyphicon-camera"></span>
+          <%= f.file_field :img_profile , placeholder: t("views.courses.image_str") %>
+        </div>
+        </div>
+      <% end %>
+      <br>
       <%= f.label :name, id: "form-lbl" %>
       <%= f.text_field :name ,class: "form-control" %>
 

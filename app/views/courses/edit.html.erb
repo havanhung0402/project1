@@ -3,7 +3,7 @@
     <h3><%= t("views.courses.edit_course") %></h3>
   </div>
   <div class="row">
-    <%= form_for(@course) do |f| %>
+    <%= form_for @course do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <%= f.text_field :title, placeholder: t("views.courses.title_str"), class: "form-control" %>
       <%= f.cktext_area :content, placeholder: t("views.courses.content_str"), class: "form-control" %>
